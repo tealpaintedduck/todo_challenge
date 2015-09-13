@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ToDoList">
+  <head>
+    <meta charset="UTF-8">
+    <title>TASKR</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/toDoListController.js"></script>
+  </head>
+  <header class="text-center"><h1>
+    TASKR
+    </h1>
+  </header>
+  <body ng-controller="ToDoListController as listCtrl">
+    <section class="text-center">
+      <form class = "form-horizontal">
+        <input type="text" ng-model="listCtrl.newTask">
+        <button class="btn btn-primary"ng-click="listCtrl.addTask()">Add Task</button>
+      </form>
+      <p class="to-do-count">Tasks to be done: {{listCtrl.getCount()}}</p>
+      <form class = "horizontal">
+      <button class="btn filter-all" ng-click="listCtrl.listFilter = {}; listCtrl.filter = 'All'">All</button>
+      <button class="btn filter-active" ng-click="listCtrl.listFilter = { active: true}; listCtrl.filter = 'Active'">Active</button>
+      <button class="btn filter-complete" ng-click="listCtrl.listFilter = { active: false}; listCtrl.filter = 'Completed'">Complete</button>
+      </form>
+      <p class="current-filter">Displaying: {{listCtrl.filter}}</p>
+      <ul class="list-group">
+        <li ng-repeat="task in listCtrl.taskList.tasks | filter: listCtrl.listFilter | orderBy:'id':true">
+          <form class="horizontal-form">
+            <label>{{task.task}}</label>
+            <button class="btn btn-check"ng-click="listCtrl.deleteTask(task)">&#10003;</button>
+          </form>
+        </li>
+      </ul>
+    </section>
+  </body>
+</html>
