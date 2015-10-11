@@ -13,3 +13,4 @@ before_script:
   - webdriver-manager update --standalone
   - sleep 3
   - webdriver-manager start --standalone
+  - sleep 3
