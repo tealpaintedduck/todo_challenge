@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test --single-run": "karma start test/karma.conf.js  --single-run",
-    "start": "http-server"
+    "start": "http-server & webdriver-manager start"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "protractor": "^2.2.0"
   },
   "dependencies": {
-    "http-server": "^0.8.5"
+    "http-server": "^0.8.5",
+    "webdriver-manager": "^7.0.1"
   }
 }

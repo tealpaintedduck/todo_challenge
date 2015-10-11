@@ -12,5 +12,3 @@ before_script:
   - npm start > /dev/null &
   - webdriver-manager update --standalone
   - sleep 3
-  - webdriver-manager start --standalone
-  - sleep 3
