@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma start test/karma.conf.js",
+    "test --single-run": "karma start test/karma.conf.js  --single-run",
     "start": "http-server"
   },
   "repository": {
@@ -25,5 +25,8 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "phantomjs": "^1.9.18",
     "protractor": "^2.2.0"
+  },
+  "dependencies": {
+    "http-server": "^0.8.5"
   }
 }
