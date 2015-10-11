@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test --single-run": "karma start test/karma.conf.js  --single-run"
+    "test --single-run": "karma start test/karma.conf.js  --single-run",
+    "start": "http-server"
   },
   "repository": {
     "type": "git",
