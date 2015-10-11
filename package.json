@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test --single-run": "node node_modules/karma/bin/karma start test/karma.conf.js  --single-run"
+    "test": "karma start test/karma.conf.js",
+    "start": "http-server",
+    "postinstall": "bower cache clean && bower install"
   },
   "repository": {
     "type": "git",
